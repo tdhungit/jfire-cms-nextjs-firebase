@@ -19,4 +19,10 @@ export const navItems = [
 		label: 'Articles',
 		route: '/admin/articles',
 	},
+	{
+		key: 'pages',
+		icon: CiOutlined,
+		label: 'Pages',
+		route: '/admin/pages',
+	},
 ];
