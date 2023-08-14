@@ -10,6 +10,7 @@ export class Page {
 	title: string = '';
 	slug: string = '';
 	content: string = '';
+	isDefault: boolean = false;
 	seoKeyword: string = '';
 	seoContent: string = '';
 }

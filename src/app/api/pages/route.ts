@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
 		return NextResponse.json({ message: 'unauthenticated' }, { status: 403 });
 	}
 
-	const { title, slug, content, seoKeyword, seoContent } = await req.json();
+	const { title, slug, content, isDefault, seoKeyword, seoContent } = await req.json();
 
 	if (!title || !slug || !content) {
 		return NextResponse.json({ message: 'Invalid params' }, { status: 500 });
@@ -36,6 +36,7 @@ export async function POST(req: NextRequest) {
 	page.title = title;
 	page.slug = slug;
 	page.content = content;
+	page.isDefault = isDefault;
 	const res = await pageRepository.create(page);
 	return NextResponse.json(res);
 }
@@ -46,7 +47,7 @@ export async function PUT(req: NextRequest) {
 		return NextResponse.json({ message: 'unauthenticated' }, { status: 403 });
 	}
 
-	const { id, title, slug, content, seoKeyword, seoContent } = await req.json();
+	const { id, title, slug, content, isDefault, seoKeyword, seoContent } = await req.json();
 
 	if (!id) {
 		return NextResponse.json({ message: 'Invalid params' }, { status: 500 });
@@ -60,6 +61,7 @@ export async function PUT(req: NextRequest) {
 	if (title) page.title = title;
 	if (slug) page.slug = slug;
 	if (content) page.content = content;
+	if (isDefault === false || isDefault === true) page.isDefault = isDefault;
 
 	const res = await pageRepository.update(page);
 	return NextResponse.json(res);

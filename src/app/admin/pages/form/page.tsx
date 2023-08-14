@@ -2,7 +2,7 @@
 
 import { request } from '@/utils/request';
 import CodeEditor from '@uiw/react-textarea-code-editor';
-import { Form, FormInstance, Input, message } from 'antd';
+import { Checkbox, Form, FormInstance, Input, message } from 'antd';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
@@ -24,6 +24,7 @@ export default function PageForm() {
 					formRef?.current?.setFieldsValue({
 						title: res.title || '',
 						slug: res.slug || '',
+						isDefault: res.isDefault || false,
 					});
 					if (res.content) {
 						setCode(res.content);
@@ -87,6 +88,9 @@ export default function PageForm() {
 					</Form.Item>
 					<Form.Item name="slug" label="Slug">
 						<Input />
+					</Form.Item>
+					<Form.Item name="isDefault" valuePropName="checked">
+						<Checkbox value={true}>Is Home Page</Checkbox>
 					</Form.Item>
 					<Form.Item label="HTML">
 						<CodeEditor

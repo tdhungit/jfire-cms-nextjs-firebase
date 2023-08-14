@@ -25,4 +25,10 @@ export const navItems = [
 		label: 'Pages',
 		route: '/admin/pages',
 	},
+	{
+		key: 'settings',
+		icon: CiOutlined,
+		label: 'Settings',
+		route: '/admin/settings',
+	},
 ];
