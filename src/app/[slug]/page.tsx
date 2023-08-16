@@ -8,6 +8,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
 	const page = await getPage(params.slug);
 
 	return (
-		<div className="overflow-hidden" dangerouslySetInnerHTML={{ __html: page?.content || '' }} />
+		<div
+			className="overflow-hidden min-h-screen"
+			dangerouslySetInnerHTML={{ __html: page?.content || '' }}
+		/>
 	);
 }
