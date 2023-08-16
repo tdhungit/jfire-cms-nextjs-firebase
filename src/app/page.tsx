@@ -1,7 +1,15 @@
-export default function Home() {
+import { pageRepository } from '@/collections/Page';
+
+async function getPage() {
+	return await pageRepository.whereEqualTo('isDefault', true).findOne();
+}
+
+export default async function Home() {
+	const page = await getPage();
 	return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      
-    </main>
-  );
+		<main
+			className="min-h-screen p-0 m-0"
+			dangerouslySetInnerHTML={{ __html: page?.content || '' }}
+		></main>
+	);
 }
