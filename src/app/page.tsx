@@ -7,9 +7,6 @@ async function getPage() {
 export default async function Home() {
 	const page = await getPage();
 	return (
-		<main
-			className="min-h-screen p-0 m-0"
-			dangerouslySetInnerHTML={{ __html: page?.content || '' }}
-		></main>
+		<div className="overflow-hidden" dangerouslySetInnerHTML={{ __html: page?.content || '' }} />
 	);
 }
