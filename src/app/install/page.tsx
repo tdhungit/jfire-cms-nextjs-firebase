@@ -66,7 +66,7 @@ export default function Install() {
 						</Form.Item>
 						<Form.Item>
 							<button
-								className="w-full rounded-sm bg-black text-white p-3 hover:bg-blue-950"
+								className="w-full rounded-lg bg-black text-white p-2 hover:bg-blue-950"
 								type="submit"
 							>
 								Save

@@ -2,7 +2,7 @@
 
 import { request } from '@/utils/request';
 import CodeEditor from '@uiw/react-textarea-code-editor';
-import { Checkbox, Form, FormInstance, Input, message } from 'antd';
+import { Button, Checkbox, Form, FormInstance, Input, message } from 'antd';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
@@ -109,9 +109,9 @@ export default function PageForm() {
 						/>
 					</Form.Item>
 					<Form.Item>
-						<button className="rounded-lg bg-black text-white p-3 hover:bg-blue-950" type="submit">
+						<Button className="bg-blue-500 w-full" htmlType="submit" type="primary">
 							Save
-						</button>
+						</Button>
 					</Form.Item>
 				</Form>
 			</div>

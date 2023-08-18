@@ -111,7 +111,7 @@ export default function ArticleFormPage() {
 					<Input />
 				</Form.Item>
 				<div className="mb-4 -mt-4">
-					<Button type="primary" onClick={() => setChooseThumbnail(true)}>
+					<Button type="primary" onClick={() => setChooseThumbnail(true)} className="bg-blue-400">
 						Choose
 					</Button>
 				</div>
@@ -119,7 +119,7 @@ export default function ArticleFormPage() {
 					<Input />
 				</Form.Item>
 				<div className="mb-4 -mt-4">
-					<Button type="primary" onClick={() => setChoosePhoto(true)}>
+					<Button type="primary" onClick={() => setChoosePhoto(true)} className="bg-blue-400">
 						Choose
 					</Button>
 				</div>
@@ -161,7 +161,7 @@ export default function ArticleFormPage() {
 					/>
 				</Form.Item>
 				<Form.Item>
-					<Button type="primary" htmlType="submit">
+					<Button type="primary" htmlType="submit" className="bg-blue-500 w-full">
 						Save
 					</Button>
 				</Form.Item>

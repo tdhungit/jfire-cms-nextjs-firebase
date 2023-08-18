@@ -1,4 +1,16 @@
+@import 'antd/dist/reset.css';
+
 @tailwind base;
+
+@layer base {
+	[type='button'],
+	[type='reset'],
+	[type='submit'],
+	button {
+		background-color: revert;
+	}
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -20,13 +32,6 @@ body {
 	color: rgb(var(--foreground-rgb));
 	background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
 		rgb(var(--background-start-rgb));
-}
-
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-	background-color: none;
 }
 
 .ant-modal-wrap {
