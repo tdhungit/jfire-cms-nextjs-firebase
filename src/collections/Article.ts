@@ -19,6 +19,7 @@ export class Article {
 	categories: string[] = [];
 	thumbnail: string = '';
 	photo: string = '';
+	source: string = '';
 	seoKeyword: string = '';
 	seoContent: string = '';
 
