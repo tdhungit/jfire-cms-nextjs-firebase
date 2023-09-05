@@ -12,12 +12,14 @@ export function initDatabase(): {
 	storage: admin.storage.Storage;
 	instance: admin.app.App;
 	bucket: Bucket;
+	db: admin.firestore.Firestore;
 } {
 	if (admin.apps.length > 0) {
 		return {
 			storage: admin.storage(),
 			bucket: admin.storage().bucket(firebaseConfig.bucketName),
 			instance: admin.app(),
+			db: admin.firestore(),
 		};
 	}
 
@@ -36,5 +38,6 @@ export function initDatabase(): {
 		storage: admin.storage(),
 		bucket: admin.storage().bucket(firebaseConfig.bucketName),
 		instance: instance,
+		db: admin.firestore(),
 	};
 }

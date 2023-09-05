@@ -1,3 +1,4 @@
+import { MediaRepository } from '@/repositories/MediaRepository';
 import { initDatabase } from '@/services/firebase';
 import { Collection, getRepository } from 'fireorm';
 
@@ -18,4 +19,4 @@ export class Media {
 	options: any = {};
 }
 
-export const mediaRepository = getRepository(Media);
+export const mediaRepository = getRepository(Media) as MediaRepository;
