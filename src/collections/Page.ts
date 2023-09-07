@@ -1,6 +1,5 @@
-import { PageRepository } from '@/repositories/PageRepository';
 import { initDatabase } from '@/services/firebase';
-import { Collection, getRepository } from 'fireorm';
+import { Collection } from 'fireorm';
 
 initDatabase();
 
@@ -15,5 +14,3 @@ export class Page {
 	seoKeyword: string = '';
 	seoContent: string = '';
 }
-
-export const pageRepository = getRepository(Page) as PageRepository;

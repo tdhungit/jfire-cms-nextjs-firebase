@@ -1,4 +1,4 @@
-import { pageRepository } from '@/collections/Page';
+import { pageRepository } from '@/repositories/PageRepository';
 
 async function getPage() {
 	return await pageRepository.whereEqualTo('isDefault', true).findOne();

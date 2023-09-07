@@ -1,4 +1,5 @@
-import { ArticleCategory, articleCategoryRepository } from '@/collections/ArticleCategory';
+import { ArticleCategory } from '@/collections/ArticleCategory';
+import { articleCategoryRepository } from '@/repositories/ArticleCategoryRepository';
 import { getSessionUser } from '@/utils/user';
 import { NextRequest, NextResponse } from 'next/server';
 

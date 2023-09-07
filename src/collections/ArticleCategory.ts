@@ -1,6 +1,5 @@
-import { ArticleCategoryRepository } from '@/repositories/ArticleCategoryRepository';
 import { initDatabase } from '@/services/firebase';
-import { Collection, getRepository } from 'fireorm';
+import { Collection } from 'fireorm';
 
 initDatabase();
 
@@ -15,7 +14,3 @@ export class ArticleCategory {
 	seoKeyword: string = '';
 	seoContent: string = '';
 }
-
-export const articleCategoryRepository = getRepository(
-	ArticleCategory,
-) as ArticleCategoryRepository;

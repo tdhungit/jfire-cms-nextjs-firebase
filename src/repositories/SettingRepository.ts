@@ -1,6 +1,8 @@
 import { Setting } from '@/collections/Setting';
-import { CustomRepository } from 'fireorm';
+import { CustomRepository, getRepository } from 'fireorm';
 import { AppRepository } from './AppRepository';
 
 @CustomRepository(Setting)
-export class SettingRepository extends AppRepository<Setting> {}
+class SettingRepository extends AppRepository<Setting> {}
+
+export const settingRepository = getRepository(Setting) as SettingRepository;

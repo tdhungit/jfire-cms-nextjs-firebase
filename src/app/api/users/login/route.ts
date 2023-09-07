@@ -1,4 +1,4 @@
-import { userRepository } from '@/collections/User';
+import { userRepository } from '@/repositories/UserRepository';
 import { encrypted } from '@/utils/encrypt';
 import { NextRequest, NextResponse } from 'next/server';
 import { Md5 } from 'ts-md5';

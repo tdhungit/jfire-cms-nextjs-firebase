@@ -1,4 +1,4 @@
-import { userRepository } from '@/collections/User';
+import { userRepository } from '@/repositories/UserRepository';
 import { cookies } from 'next/headers';
 import { decrypted } from './encrypt';
 

@@ -1,4 +1,5 @@
-import { Setting, settingRepository } from '@/collections/Setting';
+import { Setting } from '@/collections/Setting';
+import { settingRepository } from '@/repositories/SettingRepository';
 import { getSessionUser } from '@/utils/user';
 import { NextRequest, NextResponse } from 'next/server';
 

@@ -1,4 +1,5 @@
-import { Media, mediaRepository, storageBucket } from '@/collections/Media';
+import { Media, storageBucket } from '@/collections/Media';
+import { mediaRepository } from '@/repositories/MediaRepository';
 import { getSessionUser } from '@/utils/user';
 import { NextRequest, NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';

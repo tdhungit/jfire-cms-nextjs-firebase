@@ -1,6 +1,8 @@
 import { User } from '@/collections/User';
-import { CustomRepository } from 'fireorm';
+import { CustomRepository, getRepository } from 'fireorm';
 import { AppRepository } from './AppRepository';
 
 @CustomRepository(User)
-export class UserRepository extends AppRepository<User> {}
+class UserRepository extends AppRepository<User> {}
+
+export const userRepository = getRepository(User) as UserRepository;

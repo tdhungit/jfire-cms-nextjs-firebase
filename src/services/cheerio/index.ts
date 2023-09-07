@@ -1,5 +1,7 @@
-import { Article, articleRepository } from '@/collections/Article';
-import { ArticleCategory, articleCategoryRepository } from '@/collections/ArticleCategory';
+import { Article } from '@/collections/Article';
+import { ArticleCategory } from '@/collections/ArticleCategory';
+import { articleCategoryRepository } from '@/repositories/ArticleCategoryRepository';
+import { articleRepository } from '@/repositories/ArticleRepository';
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 

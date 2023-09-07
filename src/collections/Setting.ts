@@ -1,6 +1,5 @@
-import { SettingRepository } from '@/repositories/SettingRepository';
 import { initDatabase } from '@/services/firebase';
-import { Collection, getRepository } from 'fireorm';
+import { Collection } from 'fireorm';
 
 initDatabase();
 
@@ -13,5 +12,3 @@ export class Setting {
 	value: any = {};
 	options: any = {};
 }
-
-export const settingRepository = getRepository(Setting) as SettingRepository;

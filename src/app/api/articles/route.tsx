@@ -1,4 +1,5 @@
-import { Article, articleRepository } from '@/collections/Article';
+import { Article } from '@/collections/Article';
+import { articleRepository } from '@/repositories/ArticleRepository';
 import { getSessionUser } from '@/utils/user';
 import { NextRequest, NextResponse } from 'next/server';
 

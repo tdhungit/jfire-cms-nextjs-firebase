@@ -1,4 +1,5 @@
-import { Page, pageRepository } from '@/collections/Page';
+import { Page } from '@/collections/Page';
+import { pageRepository } from '@/repositories/PageRepository';
 import { getSessionUser } from '@/utils/user';
 import { NextRequest, NextResponse } from 'next/server';
 

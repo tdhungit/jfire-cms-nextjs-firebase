@@ -1,5 +1,7 @@
-import { Setting, settingRepository } from '@/collections/Setting';
-import { User, userRepository } from '@/collections/User';
+import { Setting } from '@/collections/Setting';
+import { User } from '@/collections/User';
+import { settingRepository } from '@/repositories/SettingRepository';
+import { userRepository } from '@/repositories/UserRepository';
 import { NextRequest, NextResponse } from 'next/server';
 import { Md5 } from 'ts-md5';
 

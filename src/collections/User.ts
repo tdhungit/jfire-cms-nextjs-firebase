@@ -1,6 +1,5 @@
-import { UserRepository } from '@/repositories/UserRepository';
 import { initDatabase } from '@/services/firebase';
-import { Collection, getRepository } from 'fireorm';
+import { Collection } from 'fireorm';
 
 initDatabase();
 
@@ -16,5 +15,3 @@ export class User {
 	phone: string = '';
 	roles: Array<string> = ['USER'];
 }
-
-export const userRepository = getRepository(User) as UserRepository;

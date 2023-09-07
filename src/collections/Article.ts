@@ -1,6 +1,5 @@
-import { ArticleRepository } from '@/repositories/ArticleRepository';
 import { initDatabase } from '@/services/firebase';
-import { Collection, getRepository } from 'fireorm';
+import { Collection } from 'fireorm';
 
 initDatabase();
 
@@ -30,5 +29,3 @@ export class Article {
 		}
 	}
 }
-
-export const articleRepository = getRepository(Article) as ArticleRepository;

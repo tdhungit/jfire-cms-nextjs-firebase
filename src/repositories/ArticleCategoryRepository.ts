@@ -1,6 +1,10 @@
 import { ArticleCategory } from '@/collections/ArticleCategory';
-import { CustomRepository } from 'fireorm';
+import { CustomRepository, getRepository } from 'fireorm';
 import { AppRepository } from './AppRepository';
 
 @CustomRepository(ArticleCategory)
-export class ArticleCategoryRepository extends AppRepository<ArticleCategory> {}
+class ArticleCategoryRepository extends AppRepository<ArticleCategory> {}
+
+export const articleCategoryRepository = getRepository(
+	ArticleCategory,
+) as ArticleCategoryRepository;

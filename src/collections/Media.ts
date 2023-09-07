@@ -1,6 +1,5 @@
-import { MediaRepository } from '@/repositories/MediaRepository';
 import { initDatabase } from '@/services/firebase';
-import { Collection, getRepository } from 'fireorm';
+import { Collection } from 'fireorm';
 
 const firebase = initDatabase();
 
@@ -18,5 +17,3 @@ export class Media {
 	type: string = '';
 	options: any = {};
 }
-
-export const mediaRepository = getRepository(Media) as MediaRepository;

@@ -1,4 +1,4 @@
-import { articleRepository } from '@/collections/Article';
+import { articleRepository } from '@/repositories/ArticleRepository';
 
 async function getBlogs(params: any) {
 	return await articleRepository.find();

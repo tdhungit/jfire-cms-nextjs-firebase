@@ -1,8 +1,26 @@
-import { articleCategoryRepository } from '@/collections/ArticleCategory';
+import { articleCategoryRepository } from '@/repositories/ArticleCategoryRepository';
+import { articleRepository } from '@/repositories/ArticleRepository';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(req: NextRequest) {
+	// all categories
 	const categories = await articleCategoryRepository.find();
+	// articles pagination
+	const perPage = 20;
+	const total = await articleRepository.count();
+	let offset = 0;
 
-	return NextResponse.json({ categories });
+	const currentPage = req.nextUrl.searchParams.get('page');
+	let page: number = currentPage ? parseInt(currentPage) : 1;
+	if (page > 1) {
+		offset = page * perPage;
+	}
+
+	const articles = await articleRepository.collectionRef
+		.orderBy('publishAt', 'desc')
+		.startAt(offset)
+		.limit(perPage)
+		.get();
+
+	return NextResponse.json({ categories, total, articles });
 }
