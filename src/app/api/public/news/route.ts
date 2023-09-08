@@ -1,5 +1,6 @@
 import { articleCategoryRepository } from '@/repositories/ArticleCategoryRepository';
 import { articleRepository } from '@/repositories/ArticleRepository';
+import { createDocsResponse } from '@/utils/firestore';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(req: NextRequest) {
@@ -22,11 +23,7 @@ export async function GET(req: NextRequest) {
 		.limit(perPage);
 
 	const snapshot = await query.get();
-
-	let articles: any = [];
-	snapshot.docs.map((doc: any) => {
-		articles.push(doc.data());
-	});
+	const articles = createDocsResponse(snapshot);
 
 	return NextResponse.json({ categories, total, articles });
 }
