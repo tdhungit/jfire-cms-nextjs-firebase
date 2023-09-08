@@ -16,11 +16,17 @@ export async function GET(req: NextRequest) {
 		offset = page * perPage;
 	}
 
-	const articles = await articleRepository.collectionRef
+	const query = articleRepository.collectionRef
 		.orderBy('publishAt', 'desc')
-		.startAt(offset)
-		.limit(perPage)
-		.get();
+		.offset(offset)
+		.limit(perPage);
+
+	const snapshot = await query.get();
+
+	let articles: any = [];
+	snapshot.docs.map((doc: any) => {
+		articles.push(doc.data());
+	});
 
 	return NextResponse.json({ categories, total, articles });
 }
